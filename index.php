@@ -532,19 +532,18 @@ line-height:2;
 
 
 
-
   
-               echo  "<script>
-                 (function(el, interval) {
-                   window.setInterval(function(){
-                    el.textContent = Math.floor(Math.random() * $speed);
-                       }, interval);
-                  })(document.getElementById('random_number'), 1000);
-                 </script>";
+     echo  "<script>
+         (function(el, interval) {
+          window.setInterval(function(){
+           el.textContent = Math.floor(Math.random() * $speed);
+              }, interval);
+             })(document.getElementById('random_number'), 1000);
+          </script>";
   
-
 
     ?>
+    
 
   </div>
    
@@ -776,10 +775,7 @@ line-height:2;
 
 
 
-
    } // end if objects from class
-
-
 
 
 
@@ -793,7 +789,6 @@ line-height:2;
 
 
 
-
  
       } // end of class DDOS_ATTACK_SEND_TO exists
 
@@ -801,8 +796,5 @@ line-height:2;
 
     } // end if of submit
  
-
-  
-
 
 ?>
