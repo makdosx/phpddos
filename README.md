@@ -23,7 +23,6 @@ Because the program is continuously refreshed for packet delivery, <br>
 the errror.log and other-vhosts-log-log files are filled with information. <br>
 
 
-
 [phpddos-disabled](phpddos_disabled.png) <br> <br> <br> <br>
 
 [phpddos-enabled](phpddos_enabled.png) <br> <br> <br> <br>
