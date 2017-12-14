@@ -1,6 +1,5 @@
 <?php
 
-
 /*
  * Copyright (c) 2017 Barchampas Gerasimos <makindosx@gmail.com>
  * Phpddos is a program for ddos attack (ip, url).
@@ -20,7 +19,6 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
-
 
 
  class DDOS_ATTACK
@@ -124,7 +122,6 @@
 
 
 
-
      public function SOCKET_TYPE()
       {
 
@@ -201,12 +198,7 @@
 
 
 
-
-
-
    /* for socket send_to */
-
-
 
 
    /* for bufer */
@@ -280,18 +272,12 @@
 
 
 
-
-
        /* for destroyed bytes function */
 
         public function __destruct() 
            {
          unset($this->BYTES);
            }
-
-
-
-
 
 
 
@@ -338,16 +324,12 @@
 
 
 
-
        /* for destroyed LENGTH_BYTES function */
 
         public function DIS_LENGTH_BYTES() 
            {
          unset($length);
            }
-
-
-
 
 
 
@@ -373,11 +355,7 @@
 
 
 
-
-
     /* for safe IP input */
-
-   
 
     /*
      * An indentifier
@@ -417,13 +395,8 @@
 
 
 
-
-
-
-
     /* for port to send bytes */
 
-   
 
     /*
      *                       An indentifier port number (List of TCP and UDP port numbers)
@@ -510,10 +483,7 @@
 
 
 
-
    } /* end of class DDOS_ATTACK */
-
-
 
 
 
@@ -554,10 +524,6 @@
 
 
          }
-
-
-
-
 
 
 ?>
