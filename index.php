@@ -20,6 +20,12 @@
  *
  */
 
+   $allow = array("::1", "127.0.0.1");
+
+   if (!in_array ($_SERVER['REMOTE_ADDR'], $allow)) 
+    {
+    exit();
+      }
 
 ?>
 
