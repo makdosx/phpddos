@@ -22,6 +22,11 @@ will be full and the computer will not be able to load the operating system.<br>
 Because the program is continuously refreshed for packet delivery, <br>
 the errror.log and other-vhosts-log-log files are filled with information. <br><br>
 
+If you want to start a new installation, press stop <br>
+
+To end all attacks completely restart your server
+(The program will not stop sending packages to the destination even tap stop) <br><br>
+
 
 ![phpddos_disabled](phpddos_disabled.png) <br> <br> <br> 
 
