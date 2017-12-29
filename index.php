@@ -581,6 +581,7 @@ line-height:2;
 
    echo "<input type='button' value='STOP ATTACK' id='button_stop'  onclick=window.location.href='/'>";
 
+
    sleep(1);
  
 
@@ -787,8 +788,18 @@ line-height:2;
 
        if ($protocol_u == "TCP")
            {
-          // create socket for connection tcp
-            $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_TCP);
+            // create socket for connection tcp
+
+          if (($sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === false) 
+             {
+             echo "socket_create() failed: reason: " . socket_strerror(socket_last_error()) . "\n";
+               }
+
+              else
+                {
+              $sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
+                }
+             
             }
 
 
@@ -800,8 +811,21 @@ line-height:2;
 
          if ($domain = 'AF_INET' && $type = 'SOCK_DGRAM' && $protocol = 'SOL_UDP')
            {
-          $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
-            }
+ 
+           
+          if (($sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP)) === false) 
+             {
+             echo "socket_create() failed: reason: " . socket_strerror(socket_last_error()) . "\n";
+               }
+
+             else
+               {
+             $sock = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
+               }
+
+           } // end of object class for domain, type and protocol
+
+  
 
            else
              {
