@@ -15,17 +15,18 @@ sudo a2disconf other-vhosts-access-log <br>
 Restart apache gracefully:<br>
 apache2ctl graceful <br> <br> 
 
+If you want to start a new installation, press stop <br>
+
+To end all attacks completely restart your server
+(The program will not stop sending packages to the destination even tap stop) <br>
+
+e.g sudo /etc/init.d/apache2 restart <br><br>
 
 Attention: if you do not follow the installation instructions properly and you omit to <br> 
 comment on errror.log or disable the file other -vhosts-access-log then your hard drive <br>
 will be full and the computer will not be able to load the operating system.<br>
 Because the program is continuously refreshed for packet delivery, <br>
 the errror.log and other-vhosts-log-log files are filled with information. <br><br>
-
-If you want to start a new installation, press stop <br>
-
-To end all attacks completely restart your server
-(The program will not stop sending packages to the destination even tap stop) <br><br>
 
 
 ![phpddos_disabled](phpddos_disabled.png) <br> <br> <br> 
