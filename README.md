@@ -15,7 +15,7 @@ sudo a2disconf other-vhosts-access-log <br>
 Restart apache gracefully:<br>
 apache2ctl graceful <br> <br> 
 
-If you want to start a new installation, press stop <br>
+If you want to start a new attack, press stop <br>
 
 To end all attacks completely restart your server
 (The program will not stop sending packages to the destination even tap stop) <br>
