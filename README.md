@@ -1,4 +1,5 @@
 # phpddos
+# phpddos-v1.0
 
 1) First disabled log files from apache <br>
 
@@ -29,6 +30,8 @@ Because the program is continuously refreshed for packet delivery, <br>
 the errror.log and other-vhosts-log-log files are filled with information. <br><br>
 
 
-![phpddos_disabled](phpddos_disabled.png) <br> <br> <br> 
+![index](screenshots/index.png) <br> <br> <br> 
 
-![phpddos_enabled](phpddos_enabled.png) 
+![automatic](screenshots/automatic.png) <br> <br> <br> 
+
+![manual](screenshots/manual.png)
