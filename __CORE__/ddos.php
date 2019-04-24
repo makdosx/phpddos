@@ -2,7 +2,7 @@
 
 
 /*
- * Copyright (c) 2017 Barchampas Gerasimos <makindosx@gmail.com>
+ * Copyright (c) 2017-2019 Barchampas Gerasimos <makindosx@gmail.com>
  * Phpddos is a program for ddos attack (ip, url).
  *
  * Phpddos is free software: you can redistribute it and/or modify
