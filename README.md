@@ -1,8 +1,12 @@
 # phpddos
 # phpddos-v1.0
 
-The program is made for educational purposes only for to see how ddos attack method works. Any unnecessary use of the program is prohibited and the manufacturer has no responsibility for any illegal use by anyone. Use the tool at your own risk and avoid any sloppy actions. <br/> <br/>
+<h3>
+  
+The program is made for educational purposes only for to see how ddos attack method works. Any unnecessary use of the program is prohibited and the manufacturer has no responsibility for any illegal use by anyone. Use the tool at your own risk and avoid any sloppy actions.
 
+</h3>  
+  
 1) First disabled log files from apache <br>
 
 find /etc/apache2/apache2.conf <br>
